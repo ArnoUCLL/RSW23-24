@@ -1,4 +1,4 @@
 # RSW23-24
 
 
-Dit is de REPO voor het Project . :)
+Dit is de REPO voor het Project.
