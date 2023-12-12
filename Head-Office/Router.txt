@@ -1,0 +1,85 @@
+version 17.3
+service timestamps debug datetime msec
+service timestamps log datetime msec
+! Call-home is enabled by Smart-Licensing.
+service call-home
+platform qfp utilization monitor load 80
+platform punt-keepalive disable-kernel-core
+!
+hostname R-Head
+!
+
+!
+!
+!
+!
+!
+!
+
+!
+
+!
+!
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet0/0/1
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface Serial0/1/0
+ ip address 10.255.0.1 255.255.255.252
+ no shut
+!
+interface Serial0/1/1
+ ip address 10.255.0.9 255.255.255.252
+ no shut
+!
+router ospf 10
+ router-id 1.1.1.1
+ passive-interface GigabitEthernet0/0/0
+ passive-interface GigabitEthernet0/0/1
+ network 10.1.1.0 0.0.0.63 area 0
+ network 10.1.2.0 0.0.0.127 area 0
+ network 10.1.3.0 0.0.0.63 area 0
+ network 10.1.4.0 0.0.0.31 area 0
+ network 10.1.5.0 0.0.0.15 area 0
+ network 10.1.6.0 0.0.0.15 area 0
+ network 10.1.7.0 0.0.0.127 area 0
+ network 10.1.8.0 0.0.0.63 area 0
+ network 10.1.9.0 0.0.0.63 area 0
+ network 10.1.10.0 0.0.0.63 area 0
+ network 10.1.11.0 0.0.0.255 area 0
+ network 10.1.12.0 0.0.0.31 area 0
+ network 10.1.13.0 0.0.0.31 area 0
+ network 10.1.99.0 0.0.0.63 area 0
+ network 10.255.0.0 0.0.0.3 area 0
+!
+
+!
+end
