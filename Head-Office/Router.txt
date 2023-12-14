@@ -206,7 +206,7 @@ interface Serial0/1/0
  ip nat inside
 !
 interface Serial0/1/1
- ip address 10.255.0.9 255.255.255.252
+ ip address 10.255.0.5 255.255.255.252
  ip nat inside
 !
 router ospf 10
@@ -228,6 +228,7 @@ router ospf 10
  network 10.1.13.0 0.0.0.31 area 0
  network 10.1.99.0 0.0.0.63 area 0
  network 10.255.0.0 0.0.0.3 area 0
+ network 10.255.0.4 0.0.0.3 area 0
 !
 ip default-gateway 193.190.120.62
 

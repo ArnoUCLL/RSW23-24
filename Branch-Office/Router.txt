@@ -124,7 +124,7 @@ interface Serial0/1/0
  no shut
 !
 interface Serial0/1/1
- ip address 10.255.0.10 255.255.255.252
+ ip address 10.255.0.9 255.255.255.252
  no shut
 !
 router ospf 10
