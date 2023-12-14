@@ -16,10 +16,56 @@ hostname R-Branch
 !
 !
 !
+ip dhcp excluded-address 10.2.1.1
+ip dhcp excluded-address 10.2.2.1
+ip dhcp excluded-address 10.2.3.1
+ip dhcp excluded-address 10.2.4.1
+ip dhcp excluded-address 10.2.5.1
+ip dhcp excluded-address 10.2.6.1
+ip dhcp excluded-address 10.2.7.1
+ip dhcp excluded-address 10.2.99.1
 !
 !
 !
+ip dhcp pool R&E
+ network 10.2.1.0 255.255.255.128
+ default-router 10.2.1.1
+ dns-server 1.1.1.1
 !
+ip dhcp pool Guests
+ network 10.2.2.0 255.255.255.224
+ default-router 10.2.2.1
+ dns-server 1.1.1.1
+!
+ip dhcp pool Camera's
+ network 10.2.3.0 255.255.255.240
+ default-router 10.2.3.1
+ dns-server 1.1.1.1
+!
+ip dhcp pool Badges
+ network 10.2.4.0 255.255.255.240
+ default-router 10.2.4.1
+ dns-server 1.1.1.1
+!
+ip dhcp pool Printers
+ network 10.2.5.0 255.255.255.248
+ default-router 10.2.5.1
+ dns-server 1.1.1.1
+!
+ip dhcp pool Cv
+ network 10.2.6.0 255.255.255.248
+ default-router 10.2.6.1
+ dns-server 1.1.1.1
+!
+ip dhcp pool DM rooms
+ network 10.2.7.0 255.255.255.252
+ default-router 10.2.7.1
+ dns-server 1.1.1.1
+!
+ip dhcp pool Switches
+ network 10.2.99.0 255.255.255.240
+ default-router 10.2.99.1
+ dns-server 1.1.1.1
 !
 !
 !
@@ -40,6 +86,38 @@ interface GigabitEthernet0/0/1
  no ip address
  shutdown
  negotiation auto
+!
+interface GigabitEthernet0/0/1.200
+ encapsulation dot1Q 200
+ ip address 10.2.1.1 255.255.255.128
+!
+interface GigabitEthernet0/0/1.205
+ encapsulation dot1Q 205
+ ip address 10.2.2.1 255.255.255.224
+!
+interface GigabitEthernet0/0/1.210
+ encapsulation dot1Q 210
+ ip address 10.2.3.1 255.255.255.240
+!
+interface GigabitEthernet0/0/1.215
+ encapsulation dot1Q 215
+ ip address 10.2.4.1 255.255.255.240
+!
+interface GigabitEthernet0/0/1.220
+ encapsulation dot1Q 220
+ ip address 10.2.5.1 255.255.255.248
+!
+interface GigabitEthernet0/0/1.225
+ encapsulation dot1Q 225
+ ip address 10.2.6.1 255.255.255.248
+!
+interface GigabitEthernet0/0/1.230
+ encapsulation dot1Q 230
+ ip address 10.2.7.1 255.255.255.252
+!
+interface GigabitEthernet0/0/1.299
+ encapsulation dot1Q 299
+ ip address 10.2.99.1 255.255.255.240
 !
 interface Serial0/1/0
  ip address 10.255.0.2 255.255.255.252
