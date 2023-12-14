@@ -1,0 +1,42 @@
+vlan 100
+name IT
+
+
+vlan 105
+name Guests
+
+vlan 110
+name Cameras
+
+vlan 120
+name Printers
+
+vlan 125
+name CV
+
+vlan 130
+name Digitaal Bord
+
+vlan 135
+name Sales
+
+vlan 140
+name Accounting
+
+vlan 145
+name Marketing
+
+vlan 150
+name Badges
+
+vlan 155
+name Customer support
+
+vlan 160
+name Customer success
+
+vlan 165
+name Faciliteiten
+
+vlan 199
+name Switches
