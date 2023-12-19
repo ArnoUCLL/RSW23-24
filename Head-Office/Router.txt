@@ -98,7 +98,6 @@ ip dhcp pool Faciliteiten
 
 
 !
-username t privilege 15 secret 9 $9$4m47xlPgkZPPkk$5vZZmPS3EM1mxvYHpQQvfHXPR6xuOALl6D7VYPoWFnk
 !
 
 !
