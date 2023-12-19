@@ -9,11 +9,14 @@ hostname S-Data
 boot-start-marker
 boot-end-marker
 !
+enable password 7 0107
 !
+username admin password 7 0835
 no aaa new-model
 system mtu routing 1500
 !
 !
+ip domain-name S-Data.local
 !
 !
 !
@@ -102,9 +105,14 @@ interface Vlan399
 !
 ip http server
 ip http secure-server
+ip ssh-version 2
 !
 !
 line con 0
+line vty 0 4
+ password 7 1311
+ login local
+ transport input ssh
 line vty 5 15
 !
 end

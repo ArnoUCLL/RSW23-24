@@ -10,12 +10,15 @@ hostname S-Branch
 boot-start-marker
 boot-end-marker
 !
+enable password 7 0107
 !
+username admin password 7 0835
 no aaa new-model
 switch 1 provision c1000-24t-4g-l
 system mtu routing 1500
 !
 !
+ip domain-name S-Branch.local
 !
 !
 !
@@ -115,11 +118,16 @@ interface Vlan199
 !
 ip http server
 ip http secure-server
+ip ssh-version 2
 !
 !
 !
 !
 line con 0
+line vty 0 4 
+ password 7 1311
+ login local
+ transport input ssh
 line vty 5 15
 !
 end

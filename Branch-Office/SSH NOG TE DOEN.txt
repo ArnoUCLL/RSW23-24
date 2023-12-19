@@ -1,0 +1,5 @@
+CONF T
+
+crypro generate rsa keys
+
+512? : 2048
