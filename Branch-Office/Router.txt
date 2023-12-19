@@ -131,6 +131,14 @@ router ospf 10
  router-id 2.2.2.2
  passive-interface GigabitEthernet0/0/0
  passive-interface GigabitEthernet0/0/1
+ passive-interface GigabitEthernet0/0/1.200
+ passive-interface GigabitEthernet0/0/1.205
+ passive-interface GigabitEthernet0/0/1.210
+ passive-interface GigabitEthernet0/0/1.215
+ passive-interface GigabitEthernet0/0/1.220
+ passive-interface GigabitEthernet0/0/1.225
+ passive-interface GigabitEthernet0/0/1.230
+ passive-interface GigabitEthernet0/0/1.299
  network 10.2.1.0 0.0.0.127 area 0
  network 10.2.2.0 0.0.0.31 area 0
  network 10.2.3.0 0.0.0.15 area 0
