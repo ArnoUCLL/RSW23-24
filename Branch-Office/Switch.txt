@@ -5,7 +5,7 @@ service timestamps debug datetime msec
 service timestamps log datetime msec
 no service password-encryption
 !
-hostname S-Head
+hostname S-Branch
 !
 boot-start-marker
 boot-end-marker
@@ -35,56 +35,44 @@ vlan internal allocation policy ascending
 !
 !
 interface GigabitEthernet1/0/1
- switchport access vlan 100
+ switchport access vlan 200
  switchport mode access
 !
 interface GigabitEthernet1/0/2
- switchport access vlan 105
+ switchport access vlan 205
  switchport mode access
 !
 interface GigabitEthernet1/0/3
- switchport access vlan 110
+ switchport access vlan 210
  switchport mode access
 !
 interface GigabitEthernet1/0/4
- switchport access vlan 120
+ switchport access vlan 215
  switchport mode access
 !
 interface GigabitEthernet1/0/5
- switchport access vlan 125
+ switchport access vlan 220
  switchport mode access
 !
 interface GigabitEthernet1/0/6
- switchport access vlan 130
+ switchport access vlan 225
  switchport mode access
 !
 interface GigabitEthernet1/0/7
- switchport access vlan 135
+ switchport access vlan 230
  switchport mode access
 !
 interface GigabitEthernet1/0/8
- switchport access vlan 140
- switchport mode access
 !
 interface GigabitEthernet1/0/9
- switchport access vlan 145
- switchport mode access
 !
 interface GigabitEthernet1/0/10
- switchport access vlan 150
- switchport mode access
 !
 interface GigabitEthernet1/0/11
- switchport access vlan 155
- switchport mode access
 !
 interface GigabitEthernet1/0/12
- switchport access vlan 160
- switchport mode access
 !
 interface GigabitEthernet1/0/13
- switchport access vlan 165
- switchport mode access
 !
 interface GigabitEthernet1/0/14
 !
@@ -107,7 +95,7 @@ interface GigabitEthernet1/0/22
 interface GigabitEthernet1/0/23
 !
 interface GigabitEthernet1/0/24
- switchport trunk allowed vlan 100,105,110,120,125,130,140,145,150,155,160,165,199
+ switchport trunk allowed vlan 200,205,210,215,220,225,230,299
  switchport mode trunk
 !
 interface GigabitEthernet1/0/25
@@ -123,7 +111,7 @@ interface Vlan1
  shutdown
 !
 interface Vlan199
- ip address 10.1.99.5 255.255.255.192
+ ip address 10.2.99.5 255.255.255.240
 !
 ip http server
 ip http secure-server

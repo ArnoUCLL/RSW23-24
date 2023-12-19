@@ -1,7 +1,6 @@
 vlan 100
 name IT
 
-
 vlan 105
 name Guests
 

@@ -1,0 +1,23 @@
+vlan 200
+name R&E
+
+vlan 205
+name Guests
+
+vlan 210
+name Cameras
+
+vlan 215
+name Badgelezers
+
+vlan 220
+name Printers
+
+vlan 225
+name CV
+
+vlan 230
+name DM-rooms
+
+vlan 299
+name Switches
