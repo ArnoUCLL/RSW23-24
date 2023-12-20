@@ -8,9 +8,11 @@ platform punt-keepalive disable-kernel-core
 !
 hostname R-Branch
 !
-
+enable password 7 0107
 !
+username admin password 7 0835
 !
+ip domain-name R-Branch.local
 !
 !
 !
@@ -151,6 +153,12 @@ router ospf 10
 !
 ip default-gateway 193.190.120.62
 ip route 0.0.0.0 0.0.0.0 10.255.0.1
+ip ssh version 2
+!
+line vty 0 4 
+ password 7 1311
+ login local
+ transport input ssh
 !
 end
 

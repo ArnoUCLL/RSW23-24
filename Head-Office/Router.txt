@@ -8,10 +8,12 @@ platform punt-keepalive disable-kernel-core
 !
 hostname R-Head
 !
-
+enable password 7 0107
 !
 !
+username admin password 7 0835
 !
+ip domain-name R-Head.local
 !
 !
 ip domain name head.router
@@ -264,8 +266,9 @@ line con 0
  stopbits 1
 line aux 0
  stopbits 1
-line vty 0 4
- login
+line vty 0 4 
+ password 7 1311
+ login local
  transport input ssh
 !
 !

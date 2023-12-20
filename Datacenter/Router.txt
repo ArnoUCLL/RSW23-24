@@ -14,7 +14,7 @@ no aaa new-model
 !
 !
 !
-ip domain name R-Datacenter.local
+ip domain name R-Data.local
 ip dhcp excluded-address 10.3.1.1
 ip dhcp excluded-address 10.3.2.1
 ip dhcp excluded-address 10.3.99.1
@@ -28,14 +28,10 @@ ip dhcp pool Badges
 !
 !
 !
-
 !
-
-
 !
 username admin password 7 0835
 !
-
 !
 !
 !
@@ -104,12 +100,11 @@ ip route 0.0.0.0 0.0.0.0 10.255.0.5
 ip ssh version 2
 !
 !
-line vty 0 4
+line vty 0 4 
  password 7 1311
  login local
  transport input ssh
 !
-
 !
 !
 !
