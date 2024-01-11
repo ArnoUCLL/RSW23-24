@@ -19,8 +19,6 @@ system mtu routing 1500
 ip arp inspection vlan 105,110,115,120,125,130,135,140,145,150,155,160,165
 !
 !
-ip dhcp snooping vlan 105,110,115,120,125,130,135,140,145,150,155,160,165
-ip dhcp snooping
 ip domain-name S-Head.local
 !
 !
@@ -120,80 +118,64 @@ interface GigabitEthernet1/0/13
 interface GigabitEthernet1/0/14
  switchport mode access
  shutdown
- ip dhcp snooping limit rate 1
 !
 interface GigabitEthernet1/0/15
  switchport mode access
  shutdown
- ip dhcp snooping limit rate 1
 !
 interface GigabitEthernet1/0/16
  switchport mode access
  shutdown
- ip dhcp snooping limit rate 1
 !
 interface GigabitEthernet1/0/17
  switchport mode access
  shutdown
- ip dhcp snooping limit rate 1
 !
 interface GigabitEthernet1/0/18
  switchport mode access
  shutdown
- ip dhcp snooping limit rate 1
 !
 interface GigabitEthernet1/0/19
  switchport mode access
  shutdown
- ip dhcp snooping limit rate 1
 !
 interface GigabitEthernet1/0/20
  switchport mode access
  shutdown
- ip dhcp snooping limit rate 1
 !
 interface GigabitEthernet1/0/21
  switchport mode access
  shutdown
- ip dhcp snooping limit rate 1
 !
 interface GigabitEthernet1/0/22
  switchport mode access
  shutdown
- ip dhcp snooping limit rate 1
 !
 interface GigabitEthernet1/0/23
  switchport mode access
  shutdown
- ip dhcp snooping limit rate 1
 !
 interface GigabitEthernet1/0/24
  switchport trunk allowed vlan 100,105,110,120,125,130,140,145,150,155,160,165,199
  switchport trunk native vlan 99
  switchport mode trunk
  switchport nonegotiate
- ip dhcp snooping trust
- ip arp inspection trust
 !
 interface GigabitEthernet1/0/25
  switchport mode access
  shutdown
- ip dhcp snooping limit rate 1
 !
 interface GigabitEthernet1/0/26
  switchport mode access
  shutdown
- ip dhcp snooping limit rate 1
 !
 interface GigabitEthernet1/0/27
  switchport mode access
  shutdown
- ip dhcp snooping limit rate 1
 !
 interface GigabitEthernet1/0/28
  switchport mode access
  shutdown
- ip dhcp snooping limit rate 1
 !
 interface Vlan1
  no ip address
