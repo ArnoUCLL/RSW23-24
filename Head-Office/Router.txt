@@ -205,10 +205,12 @@ interface GigabitEthernet0/0/1.199
 interface Serial0/1/0
  ip address 10.255.0.1 255.255.255.252
  ip nat inside
+ no shutdown
 !
 interface Serial0/1/1
  ip address 10.255.0.5 255.255.255.252
  ip nat inside
+ no shutdown
 !
 router ospf 10
  router-id 1.1.1.1
