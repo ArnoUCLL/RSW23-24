@@ -39,16 +39,12 @@ interface FastEthernet0/1
  switchport mode access
  switchport port-security mac-address sticky
  switchport port-security
- ip arp inspection trust
- ip dhcp snooping trust
 !
 interface FastEthernet0/2
  switchport access vlan 350
  switchport mode access
  switchport port-security mac-address sticky
  switchport port-security
- ip arp inspection trust
- ip dhcp snooping trust
 !
 interface FastEthernet0/3
  switchport mode access
@@ -170,6 +166,8 @@ interface GigabitEthernt0/2
  switchport mode trunk
  switchport trunk native vlan 99
  switchport nonegotiate
+ ip dhcp snooping trust
+ ip arp inspection trust
 !
 interface Vlan1
  no ip address

@@ -1,2 +1,4 @@
 
 	Portfast security kan niet -> spanning-tree loop
+
+	BPDU ook niet -> Is een portfast functie
