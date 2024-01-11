@@ -39,56 +39,42 @@ interface GigabitEthernet1/0/1
  switchport mode access
  switchport port-security mac-address sticky
  switchport port-security
- ip arp inspection trust
- ip dhcp snooping trust
 !
 interface GigabitEthernet1/0/2
  switchport access vlan 205
  switchport mode access
  switchport port-security mac-address sticky
  switchport port-security
- ip arp inspection trust
- ip dhcp snooping trust
 !
 interface GigabitEthernet1/0/3
  switchport access vlan 210
  switchport mode access
  switchport port-security mac-address sticky
  switchport port-security
- ip arp inspection trust
- ip dhcp snooping trust
 !
 interface GigabitEthernet1/0/4
  switchport access vlan 215
  switchport mode access
  switchport port-security mac-address sticky
  switchport port-security
- ip arp inspection trust
- ip dhcp snooping trust
 !
 interface GigabitEthernet1/0/5
  switchport access vlan 220
  switchport mode access
  switchport port-security mac-address sticky
  switchport port-security
- ip arp inspection trust
- ip dhcp snooping trust
 !
 interface GigabitEthernet1/0/6
  switchport access vlan 225
  switchport mode access
  switchport port-security mac-address sticky
  switchport port-security
- ip arp inspection trust
- ip dhcp snooping trust
 !
 interface GigabitEthernet1/0/7
  switchport access vlan 230
  switchport mode access
  switchport port-security mac-address sticky
  switchport port-security
- ip arp inspection trust
- ip dhcp snooping trust
 !
 interface GigabitEthernet1/0/8
  switchport mode access
@@ -175,6 +161,8 @@ interface GigabitEthernet1/0/24
  switchport trunk native vlan 99
  switchport mode trunk
  switchport nonegotiate
+ ip dhcp snooping trust
+ ip arp inspection trust
 !
 interface GigabitEthernet1/0/25
  switchport mode access
