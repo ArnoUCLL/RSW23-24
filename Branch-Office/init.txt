@@ -1,0 +1,2 @@
+
+	Portfast security kan niet -> spanning-tree loop
