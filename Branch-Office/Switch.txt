@@ -118,7 +118,7 @@ interface Vlan199
 !
 ip http server
 ip http secure-server
-ip ssh-version 2
+ip ssh version 2
 !
 !
 !
