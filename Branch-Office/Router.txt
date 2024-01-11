@@ -86,7 +86,7 @@ interface GigabitEthernet0/0/0
 !
 interface GigabitEthernet0/0/1
  no ip address
- shutdown
+ no shutdown
  negotiation auto
 !
 interface GigabitEthernet0/0/1.200
