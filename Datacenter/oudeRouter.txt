@@ -35,22 +35,20 @@ username admin password 7 0835
 interface GigabitEthernet0/0
  no ip address
  shutdown
- negotation auto
 !
 interface GigabitEthernet0/1
  no ip address
- shutdown
- negotiation auto
+ no shutdown
 !
-interface GigabitEthernet0/0/1.300
+interface GigabitEthernet0/1.300
  encapsulation dot1Q 300
  ip address 10.3.1.1 255.255.255.128
 !
-interface GigabitEthernet0/0/1.350
+interface GigabitEthernet0/1.350
  encapsulation dot1Q 350
  ip address 10.3.2.1 255.255.255.224
 !
-interface GigabitEthernet0/0/1.399
+interface GigabitEthernet0/1.399
  encapsulation dot1Q 399
  ip address 10.3.99.1 255.255.255.224
 !
@@ -64,11 +62,11 @@ ip forward-protocol nd
 !
 router ospf 10
  router-id 3.3.3.3
- passive-interface GigabitEthernet0/0/0
- passive-interface GigabitEthernet0/0/1
- passive-interface GigabitEthernet0/0/1.300
- passive-interface GigabitEthernet0/0/1.350
- passive-interface GigabitEthernet0/0/1.399
+ passive-interface GigabitEthernet0/0
+ passive-interface GigabitEthernet0/1
+ passive-interface GigabitEthernet0/1.300
+ passive-interface GigabitEthernet0/1.350
+ passive-interface GigabitEthernet0/1.399
  network 10.3.1.0 0.0.0.63 area 0
  network 10.3.2.0 0.0.0.127 area 0
  network 10.3.99.0 0.0.0.63 area 0
