@@ -1,0 +1,177 @@
+version 15.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname S-Head
+!
+boot-start-marker
+boot-end-marker
+!
+enable password 7 0107
+!
+username admin password 7 0835
+no aaa new-model
+switch 1 provision c1000-24t-4g-l
+system mtu routing 1500
+!
+!
+ip domain-name S-Head.local
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-116992896
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-116992896
+ revocation-check none
+ rsakeypair TP-self-signed-116992896
+!
+!
+crypto pki certificate chain TP-self-signed-116992896
+ certificate self-signed 01
+  30820229 30820192 A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  30312E30 2C060355 04031325 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 31313639 39323839 36301E17 0D323430 31313131 32333532
+  365A170D 33303031 30313030 30303030 5A303031 2E302C06 03550403 1325494F
+  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3131 36393932
+  38393630 819F300D 06092A86 4886F70D 01010105 0003818D 00308189 02818100
+  B5D1BBCF BF22D69E 2C0AAEBB C058B8C3 9860E8BF A104608D 38BB6C20 4E875EBB
+  647BE437 D40F2065 994F1001 9CE5C09D C7CE0B8B B5496517 BDCD7B78 14939A0D
+  2A7784FD DB7DD503 90C75180 BAD00B7B 6DCBC12B 83F809D9 6113F20B 5896C24D
+  0B49DBDB 474FECDD B0BA4EEE D5E908EF 3D629817 88865080 16577D45 E99CAF23
+  02030100 01A35330 51300F06 03551D13 0101FF04 05300301 01FF301F 0603551D
+  23041830 16801405 134832C5 5C3AC6C3 A7F0CD43 80759E26 E198B230 1D060355
+  1D0E0416 04140513 4832C55C 3AC6C3A7 F0CD4380 759E26E1 98B2300D 06092A86
+  4886F70D 01010505 00038181 00B5935F 40082680 E70AA69A 0B7516AF F0CB6BBF
+  288D5FEB 4CC1A218 6B823430 FBEAF6D5 45D1997D 38490768 C0F67728 5ACD9D41
+  3E953140 74F0D407 774B1332 21459052 C60833E8 B2019463 E18B6379 6DB524E5
+  8A9DB26F 7FDE5BA9 5524A7BE 40649CDF AB58804E 25F9E01C 63F004DD 9D6E5BEA
+  4FBA1BE9 7162F403 56FF31D4 8E
+        quit
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet1/0/1
+ switchport access vlan 100
+ switchport mode access
+!
+interface GigabitEthernet1/0/2
+ switchport access vlan 105
+ switchport mode access
+!
+interface GigabitEthernet1/0/3
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/4
+ switchport access vlan 120
+ switchport mode access
+!
+interface GigabitEthernet1/0/5
+ switchport access vlan 125
+ switchport mode access
+!
+interface GigabitEthernet1/0/6
+ switchport access vlan 130
+ switchport mode access
+!
+interface GigabitEthernet1/0/7
+ switchport access vlan 135
+ switchport mode access
+!
+interface GigabitEthernet1/0/8
+ switchport access vlan 140
+ switchport mode access
+!
+interface GigabitEthernet1/0/9
+ switchport access vlan 145
+ switchport mode access
+!
+interface GigabitEthernet1/0/10
+ switchport access vlan 150
+ switchport mode access
+!
+interface GigabitEthernet1/0/11
+ switchport access vlan 155
+ switchport mode access
+!
+interface GigabitEthernet1/0/12
+ switchport access vlan 160
+ switchport mode access
+!
+interface GigabitEthernet1/0/13
+ switchport access vlan 165
+ switchport mode access
+!
+interface GigabitEthernet1/0/14
+!
+interface GigabitEthernet1/0/15
+!
+interface GigabitEthernet1/0/16
+!
+interface GigabitEthernet1/0/17
+!
+interface GigabitEthernet1/0/18
+!
+interface GigabitEthernet1/0/19
+!
+interface GigabitEthernet1/0/20
+!
+interface GigabitEthernet1/0/21
+!
+interface GigabitEthernet1/0/22
+!
+interface GigabitEthernet1/0/23
+!
+interface GigabitEthernet1/0/24
+ switchport trunk allowed vlan 100,105,110,120,125,130,140,145,150,155,160,165
+ switchport trunk allowed vlan add 199
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/25
+!
+interface GigabitEthernet1/0/26
+!
+interface GigabitEthernet1/0/27
+!
+interface GigabitEthernet1/0/28
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan199
+ ip address 10.1.99.5 255.255.255.192
+!
+ip http server
+ip http secure-server
+ip ssh version 2
+!
+!
+!
+!
+line con 0
+ logging synchronous
+ login local
+line vty 0 4
+ password 7 1311
+ login local
+ transport input ssh
+line vty 5 15
+ login
+ transport input none
+!
+end
+
