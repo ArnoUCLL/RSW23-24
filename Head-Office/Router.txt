@@ -126,6 +126,7 @@ ip dhcp pool Faciliteiten
 interface GigabitEthernet0/0/0
  ip address 193.190.120.56 255.255.255.224
  ip nat outside
+ no shut
  negotiation auto
 !
 interface GigabitEthernet0/0/1
