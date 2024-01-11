@@ -1,0 +1,238 @@
+version 15.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname S-Branch
+!
+boot-start-marker
+boot-end-marker
+!
+enable password 7 0107
+!
+username admin password 7 0835
+no aaa new-model
+switch 1 provision c1000-24t-4g-l
+system mtu routing 1500
+!
+!
+ip dhcp snooping vlan 200,210,215,220,225,230
+ip domain-name S-Branch.local
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-117224960
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-117224960
+ revocation-check none
+ rsakeypair TP-self-signed-117224960
+!
+!
+crypto pki certificate chain TP-self-signed-117224960
+ certificate self-signed 01
+  30820229 30820192 A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  30312E30 2C060355 04031325 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 31313732 32343936 30301E17 0D323430 31313131 34333232
+  355A170D 33303031 30313030 30303030 5A303031 2E302C06 03550403 1325494F
+  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3131 37323234
+  39363030 819F300D 06092A86 4886F70D 01010105 0003818D 00308189 02818100
+  8CFFB175 9B5648CF 2C043104 8A5B6EA0 13727D4F 6F6BDD10 D0A5B3C4 BA0D6F52
+  247B398D 0608FB01 D1BABA8A 199D3072 9A91BEF0 44E9909D A2534E3C 5F4E48C9
+  CB771A2F F2F00E8A F0040ED4 84A2E53F A71927B9 0A823E52 FFB01E51 74D99C07
+  521B5B99 1F72472A 46B78AA0 0F8DA421 58381527 63C8C1B1 75A6D047 31998BA5
+  02030100 01A35330 51300F06 03551D13 0101FF04 05300301 01FF301F 0603551D
+  23041830 16801432 5D665665 07ED6FAA 42F5D853 3152ED08 B1CBA530 1D060355
+  1D0E0416 0414325D 66566507 ED6FAA42 F5D85331 52ED08B1 CBA5300D 06092A86
+  4886F70D 01010505 00038181 000F9A16 AFED3553 A62BCA67 73CFA1E5 066B5D49
+  630E2D52 9FD46646 6ED869CC 9592C3DB 1793DED4 913669BB CFCE444B 8CFFC439
+  EB270929 730D3884 6D29730D 49A30DD3 2BA1F1FD 9FA12C36 B955EE7F 487BB1CA
+  F25E4D9B DE474FC9 6A228743 7D6098F8 1AC56A76 D27113AA DB3B597D 2F888183
+  0987B744 9AEAFDB0 B9658475 DE
+        quit
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet1/0/1
+ switchport access vlan 200
+ switchport mode access
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky 3c7c.3f1a.ad2e
+ switchport port-security
+!
+interface GigabitEthernet1/0/2
+ switchport access vlan 205
+ switchport mode access
+!
+interface GigabitEthernet1/0/3
+ switchport access vlan 210
+ switchport mode access
+ switchport port-security mac-address sticky
+ switchport port-security
+!
+interface GigabitEthernet1/0/4
+ switchport access vlan 215
+ switchport mode access
+ switchport port-security mac-address sticky
+ switchport port-security
+!
+interface GigabitEthernet1/0/5
+ switchport access vlan 220
+ switchport mode access
+ switchport port-security mac-address sticky
+ switchport port-security
+!
+interface GigabitEthernet1/0/6
+ switchport access vlan 225
+ switchport mode access
+ switchport port-security mac-address sticky
+ switchport port-security
+!
+interface GigabitEthernet1/0/7
+ switchport access vlan 230
+ switchport mode access
+ switchport port-security mac-address sticky
+ switchport port-security
+!
+interface GigabitEthernet1/0/8
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/9
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/10
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/11
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/12
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/13
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/14
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/15
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/16
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/17
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/18
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/19
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/20
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/21
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/22
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/23
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/24
+ switchport trunk allowed vlan 200,205,210,215,220,225,230,299
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/25
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/26
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/27
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface GigabitEthernet1/0/28
+ switchport mode access
+ shutdown
+ ip dhcp snooping limit rate 1
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan99
+ no ip address
+!
+interface Vlan299
+ ip address 10.2.99.5 255.255.255.240
+!
+ip http server
+ip http secure-server
+ip ssh version 2
+!
+!
+!
+!
+line con 0
+line vty 0 4
+ password 7 1311
+ login local
+ transport input ssh
+line vty 5 15
+ login
+ transport input none
+!
+end
