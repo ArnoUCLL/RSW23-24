@@ -76,7 +76,6 @@ interface FastEthernet0/2
  switchport access vlan 350
  switchport mode access
  switchport port-security mac-address sticky
- switchport port-security mac-address sticky 3c7c.3f1a.ad2e
  switchport port-security
 !
 interface FastEthernet0/3
