@@ -1,3 +1,8 @@
+version 15.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
 hostname R-Datacenter
 !
 boot-start-marker
@@ -7,9 +12,6 @@ boot-end-marker
 enable password 7 0107
 !
 no aaa new-model
-!
-!
-!
 !
 !
 !
@@ -25,69 +27,46 @@ ip dhcp pool Badges
  dns-server 1.1.1.1
 !
 !
-!
-!
-!
-!
-!
 username admin password 7 0835
 !
 !
 !
 !
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-interface GigabitEthernet0/0/0
+interface GigabitEthernet0/0
  no ip address
  shutdown
- negotiation auto
 !
-interface GigabitEthernet0/0/1
+interface GigabitEthernet0/1
  no ip address
  no shutdown
- negotiation auto
 !
-interface GigabitEthernet0/0/1.300
+interface GigabitEthernet0/1.300
  encapsulation dot1Q 300
  ip address 10.3.1.1 255.255.255.128
 !
-interface GigabitEthernet0/0/1.350
+interface GigabitEthernet0/1.350
  encapsulation dot1Q 350
  ip address 10.3.2.1 255.255.255.224
 !
-interface GigabitEthernet0/0/1.399
+interface GigabitEthernet0/1.399
  encapsulation dot1Q 399
  ip address 10.3.99.1 255.255.255.224
 !
-interface Serial0/1/0
+interface Serial0/0/0
  ip address 10.255.0.10 255.255.255.252
 !
-interface Serial0/1/1
+interface Serial0/0/1
  ip address 10.255.0.6 255.255.255.252
+!
+ip forward-protocol nd
 !
 router ospf 10
  router-id 3.3.3.3
- passive-interface GigabitEthernet0/0/0
- passive-interface GigabitEthernet0/0/1
- passive-interface GigabitEthernet0/0/1.300
- passive-interface GigabitEthernet0/0/1.350
- passive-interface GigabitEthernet0/0/1.399
+ passive-interface GigabitEthernet0/0
+ passive-interface GigabitEthernet0/1
+ passive-interface GigabitEthernet0/1.300
+ passive-interface GigabitEthernet0/1.350
+ passive-interface GigabitEthernet0/1.399
  network 10.3.1.0 0.0.0.63 area 0
  network 10.3.2.0 0.0.0.127 area 0
  network 10.3.99.0 0.0.0.63 area 0
@@ -101,14 +80,26 @@ ip route 0.0.0.0 0.0.0.0 10.255.0.5
 ip ssh version 2
 !
 !
-line vty 0 4 
+!
+!
+!
+control-plane
+!
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
  password 7 1311
  login local
  transport input ssh
 !
-!
-!
-!
-!
+scheduler allocate 20000 1000
 !
 end
