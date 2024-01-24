@@ -16,7 +16,6 @@ username admin password 7 0835
 no aaa new-model
 switch 1 provision c1000-24t-4g-l
 system mtu routing 1500
-ip arp inspection vlan 105,110,115,120,125,130,135,140,145,150,155,160,165
 !
 !
 ip domain-name S-Head.local
@@ -159,7 +158,6 @@ interface GigabitEthernet1/0/24
  switchport trunk allowed vlan 100,105,110,120,125,130,140,145,150,155,160,165,199
  switchport trunk native vlan 99
  switchport mode trunk
- switchport nonegotiate
 !
 interface GigabitEthernet1/0/25
  switchport mode access

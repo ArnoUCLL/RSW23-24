@@ -1,5 +1,5 @@
 CONF T
 
-crypro generate rsa keys
+crypto key generate rsa
 
-512? : 2048
+2048

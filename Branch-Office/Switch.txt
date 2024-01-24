@@ -15,10 +15,13 @@ username admin password 7 0835
 no aaa new-model
 switch 1 provision c1000-24t-4g-l
 system mtu routing 1500
-ip arp inspection vlan 200,205,210,215,220,225,230
 !
 !
 ip domain-name S-Branch.local
+!
+!
+!
+!
 !
 !
 !
@@ -140,9 +143,7 @@ interface GigabitEthernet1/0/23
 !
 interface GigabitEthernet1/0/24
  switchport trunk allowed vlan 200,205,210,215,220,225,230,299
- switchport trunk native vlan 99
  switchport mode trunk
- switchport nonegotiate
 !
 interface GigabitEthernet1/0/25
  switchport mode access
@@ -183,5 +184,7 @@ line vty 0 4
  login local
  transport input ssh
 line vty 5 15
+ login
+ transport input none
 !
 end
